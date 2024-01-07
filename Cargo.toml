@@ -8,12 +8,15 @@ opt-level = 'z' # turn on maximum optimizations. We only have 64kB
 lto = true      # Link-time-optimizations for further size reduction
 
 [dependencies]
-cortex-m = "^0.6.3"     # Access to the generic ARM peripherals
-cortex-m-rt = "^0.6.12" # Startup code for the ARM Core
-embedded-hal = "^0.2.4" # Access to generic embedded functions (`set_high`)
-panic-halt = "^0.2.0"   # Panic handler
+# embedded-hal = "^0.2.4" # Access to generic embedded functions (`set_high`)
+cortex-m = { version = "0.7.4", features = ["critical-section-single-core"] }
+cortex-m-rt = { version = "0.7.3", features = ["device"] }
+# Panic behavior, see https://crates.io/keywords/panic-impl for alternatives
+panic-halt = "0.2.0"
+# "ld" provides memory.x. Replace stm32f303xc with your target chip, see next section for more info
+stm32f3xx-hal = { version = "0.10.0", features = ["ld", "rt", "stm32f303xc"] }
 
-stm32f1xx-hal = { version = "0.6.1", features = ["stm32f103", "rt", "medium"] }
+
 #stm32f303xc
 
 # .cargo/config specifies the default target
