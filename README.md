@@ -17,6 +17,8 @@ cargo flash --chip stm32f103rb --release
 # ref
 The Embedded Rust Book ： https://docs.rust-embedded.org/book/
 
+Introduction for various peripherals with F3 discovery board: https://docs.rust-embedded.org/discovery/f3discovery/
+
 https://bacelarhenrique.me/2021/02/21/rust-and-stm32-a-quick-start-guide.html
 
 https://medium.com/digitalfrontiers/rust-on-a-stm32-microcontroller-90fac16f6342
