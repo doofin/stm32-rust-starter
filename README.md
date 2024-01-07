@@ -1,5 +1,5 @@
 # stm32-rust-starter
-template for embeded rust dev with stm32
+template for embeded rust dev with stm32 as of 2023. Feel free to contribute via issues/PR! 
 
 # setup
 ```
