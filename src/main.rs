@@ -3,7 +3,8 @@
 
 use cortex_m::asm;
 use cortex_m_rt::entry;
-use panic_halt as _;
+use defmt_rtt as _;
+use panic_semihosting as _;
 use stm32f3xx_hal::{self as hal, pac, prelude::*};
 
 #[entry]
@@ -19,6 +20,7 @@ fn main() -> ! {
 
     loop {
         led.toggle().unwrap();
+        defmt::info!("led!");
         asm::delay(8_000_000);
     }
 }
